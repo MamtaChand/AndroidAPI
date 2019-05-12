@@ -8,7 +8,7 @@ import android.widget.Button;
 import android.widget.Toast;
 
 public class Dashboard extends AppCompatActivity {
-    private Button btnView, btnsearch;
+    private Button btnView, btnsearch,btnRegister,btnUpDel;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -17,6 +17,9 @@ public class Dashboard extends AppCompatActivity {
 
         btnsearch = findViewById(R.id.btnSearch);
         btnView = findViewById(R.id.btnView);
+        btnRegister = findViewById(R.id.btnRegister);
+        btnUpDel = findViewById(R.id.btnUpDe);
+
 
         btnView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -27,7 +30,7 @@ public class Dashboard extends AppCompatActivity {
 
             }
         });
-        btnView.setOnClickListener(new View.OnClickListener() {
+        btnsearch.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(Dashboard.this, SearchActivity.class);
@@ -35,5 +38,14 @@ public class Dashboard extends AppCompatActivity {
 
             }
         });
+
+        btnRegister.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(Dashboard.this,RegisterActivity.class);
+                startActivity(intent);
+            }
+        });
     }
+
 }
